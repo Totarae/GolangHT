@@ -25,4 +25,10 @@ func main() {
 
 	temp, err = cacheExample.Get("testkey4")
 	fmt.Println(err)
+
+	err = cacheExample.Delete("testkey3")
+	fmt.Println(err)
+
+	temp, err = cacheExample.Get("testkey3")
+	fmt.Println(err)
 }
