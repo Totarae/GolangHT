@@ -10,8 +10,9 @@ func NewCache() *Cache {
 	return &Cache{make(map[string]interface{})}
 }
 
-func (obj *Cache) Set(key string, value interface{}) {
-
+func (obj *Cache) Set(key string, value interface{}) error {
+	obj.valuesMap[key] = value
+	return nil
 }
 func (obj *Cache) Get(key string) (interface{}, error) {
 	value, exists := obj.valuesMap[key]
