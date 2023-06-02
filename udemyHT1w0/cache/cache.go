@@ -3,17 +3,17 @@ package cache
 import "errors"
 
 type Cache struct {
-	valuesMap map[string]any
+	valuesMap map[string]interface{}
 }
 
-func NewCache(valuesMap map[string]any) *Cache {
-	return &Cache{make(map[string]any)}
+func NewCache() *Cache {
+	return &Cache{make(map[string]interface{})}
 }
 
 func (obj *Cache) Set(key string, value interface{}) {
 
 }
-func (obj *Cache) Get(key string) (any, error) {
+func (obj *Cache) Get(key string) (interface{}, error) {
 	value, exists := obj.valuesMap[key]
 
 	if exists {
