@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"time"
 	"udemyHT1w0/cache"
 )
 
 func main() {
-	cacheExample := cache.NewCache()
+
+	cacheExample := cache.NewCache(time.Minute * 3)
 
 	err := cacheExample.Set("testkey1", "testvalue1")
 	err = cacheExample.Set("key2", 0)
